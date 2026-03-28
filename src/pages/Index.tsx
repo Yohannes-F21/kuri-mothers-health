@@ -6,7 +6,8 @@ import heroImg from "@/assets/hero-mother.jpg";
 import productImg from "@/assets/product-tea.jpg";
 import communityImg from "@/assets/community.jpg";
 import ingredientsImg from "@/assets/ingredients.jpg";
-import { Heart, Leaf, Users, Smartphone, ShieldCheck, Globe, ArrowRight, Star, CheckCircle } from "lucide-react";
+import farmersImg from "@/assets/farmers.jpg";
+import { Heart, Leaf, Users, Smartphone, ShieldCheck, Globe, ArrowRight, Star, CheckCircle, Sprout } from "lucide-react";
 
 const pillars = [
   { icon: Leaf, title: "Natural Products", desc: "Carefully selected herbal blends rooted in tradition and backed by research." },
@@ -286,6 +287,37 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Supply Chain / Farmers */}
+      <section className="section-padding section-y max-w-[1440px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <img src={farmersImg} alt="Ethiopian herb farmers supplying Kuri" loading="lazy" width={1200} height={800} className="rounded-2xl w-full object-cover aspect-[4/3]" />
+          </div>
+          <div className="order-1 lg:order-2">
+            <p className="label-sm mb-4 text-accent">Our Supply Chain</p>
+            <h2 className="heading-lg mb-6">Rooted in Ethiopia's farming communities.</h2>
+            <p className="body-lg mb-6">
+              Every Kuri product begins in Ethiopia's highlands, where we work directly with smallholder farmers to source fenugreek, fennel, moringa, and other galactagogue herbs. Our supply chain is built on fair partnerships, traceability, and respect for the land.
+            </p>
+            <div className="space-y-4 mb-8">
+              {[
+                { icon: Sprout, text: "Direct partnerships with 200+ farmers across Oromia, Amhara & SNNPR" },
+                { icon: Leaf, text: "Sustainable harvesting and organic farming practices" },
+                { icon: Users, text: "Empowering rural women farmers with fair, reliable income" },
+              ].map((item) => (
+                <div key={item.text} className="flex items-start gap-3">
+                  <item.icon size={18} className="text-primary shrink-0 mt-0.5" />
+                  <span className="body-md">{item.text}</span>
+                </div>
+              ))}
+            </div>
+            <Button variant="hero-outline" size="lg" asChild>
+              <Link to="/about">Learn Our Story <ArrowRight className="ml-1" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Impact / Mission */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-primary" />
@@ -300,7 +332,7 @@ const Index = () => {
           <div className="grid grid-cols-3 gap-8 max-w-xl mx-auto">
             {[
               { metric: "5,000+", label: "Mothers Supported" },
-              { metric: "50+", label: "Community Partners" },
+              { metric: "200+", label: "Partner Farmers" },
               { metric: "12+", label: "Cities Reached" },
             ].map((stat) => (
               <div key={stat.label}>

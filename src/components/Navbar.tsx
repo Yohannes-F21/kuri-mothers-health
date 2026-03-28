@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import kuriLogo from "@/assets/kuri-logo-clean.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -35,8 +36,8 @@ const Navbar = () => {
       }`}
     >
       <nav className="section-padding flex items-center justify-between h-16 md:h-20 max-w-[1440px] mx-auto">
-        <Link to="/" className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-          Kuri
+        <Link to="/" className="flex items-center">
+          <img src={kuriLogo} alt="Kuri — Mother's Health Solution" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
