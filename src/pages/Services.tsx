@@ -5,11 +5,11 @@ import communityImg from "@/assets/community.jpg";
 import { MessageCircle, Users, BookOpen, BarChart3, Heart, Smartphone, CheckCircle, ArrowRight } from "lucide-react";
 
 const features = [
-  { icon: MessageCircle, title: "Expert Consultations", desc: "Connect with certified lactation consultants and maternal health professionals for personalized, one-on-one guidance." },
+  { icon: Heart, title: "Free Lactation Consultation", desc: "Every mother deserves expert guidance. Kuri offers free one-on-one consultations with certified lactation specialists — no cost, no barriers." },
+  { icon: MessageCircle, title: "Expert Guidance", desc: "Connect with certified lactation consultants and maternal health professionals for personalized, evidence-based support." },
   { icon: Users, title: "Peer Support Groups", desc: "Join groups of mothers in your area or online. Share experiences, ask questions, and find encouragement from women who understand." },
-  { icon: BookOpen, title: "Educational Resources", desc: "Access a growing library of evidence-based articles, videos, and guides covering every aspect of breastfeeding." },
+  { icon: BookOpen, title: "Educational Resources", desc: "Access a growing library of evidence-based articles, videos, and guides — including our Breastfeeding Basics and Pumping & Storage guides." },
   { icon: BarChart3, title: "Journey Tracking", desc: "Monitor your breastfeeding milestones, set goals, and receive personalized tips based on your unique journey." },
-  { icon: Heart, title: "Emotional Support", desc: "Breastfeeding can be emotionally demanding. Our platform includes resources for mental wellness and postpartum support." },
   { icon: Smartphone, title: "Mobile Access", desc: "Everything you need, right in your pocket. Access support, resources, and community anytime, anywhere." },
 ];
 
@@ -23,7 +23,7 @@ const Services = () => {
             <p className="label-sm mb-4 text-accent">Support Platform</p>
             <h1 className="heading-xl mb-6">More than products. A complete support ecosystem.</h1>
             <p className="body-lg max-w-2xl">
-              Kuri's digital platform brings together expert guidance, peer support, educational resources, and personalized tools — giving every mother the comprehensive support she deserves.
+              Kuri's support platform brings together free lactation consultations, expert guidance, peer support, educational resources, and personalized tools — giving every mother the comprehensive support she deserves, at no cost.
             </p>
           </div>
         </div>
