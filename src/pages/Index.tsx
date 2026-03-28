@@ -6,7 +6,8 @@ import heroImg from "@/assets/hero-mother.jpg";
 import productImg from "@/assets/product-tea.jpg";
 import communityImg from "@/assets/community.jpg";
 import ingredientsImg from "@/assets/ingredients.jpg";
-import { Heart, Leaf, Users, Smartphone, ShieldCheck, Globe, ArrowRight, Star, CheckCircle } from "lucide-react";
+import farmersImg from "@/assets/farmers.jpg";
+import { Heart, Leaf, Users, Smartphone, ShieldCheck, Globe, ArrowRight, Star, CheckCircle, Sprout } from "lucide-react";
 
 const pillars = [
   { icon: Leaf, title: "Natural Products", desc: "Carefully selected herbal blends rooted in tradition and backed by research." },
