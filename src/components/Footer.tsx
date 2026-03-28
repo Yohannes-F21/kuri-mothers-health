@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import kuriLogo from "@/assets/kuri-logo-clean.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h3 className="font-serif text-2xl font-bold mb-4">Kuri</h3>
+            <img src={kuriLogo} alt="Kuri — Mother's Health Solution" className="h-12 w-auto mb-4 brightness-0 invert" />
             <p className="text-sm leading-relaxed opacity-70 max-w-xs">
               Ethiopia's first trusted lactation support platform. Natural products, expert guidance, and a caring community — all for the breastfeeding mother.
             </p>
