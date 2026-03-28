@@ -208,9 +208,9 @@ const Index = () => {
             </p>
             <div className="space-y-5">
               {[
-                "One-on-one expert consultations",
+                "Free one-on-one lactation consultations",
                 "Peer support groups and forums",
-                "Educational content and breastfeeding guides",
+                "Breastfeeding Basics & Pumping guides",
                 "Progress tracking and personalized tips",
               ].map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
