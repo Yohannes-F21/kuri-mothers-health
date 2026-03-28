@@ -3,7 +3,9 @@ import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import heroImg from "@/assets/hero-mother.jpg";
-import productImg from "@/assets/product-tea.jpg";
+import productMint from "@/assets/product-mint.jpg";
+import productFennel from "@/assets/product-fennel.jpg";
+import productHero from "@/assets/product-fennel-hero.jpg";
 import communityImg from "@/assets/community.jpg";
 import ingredientsImg from "@/assets/ingredients.jpg";
 import farmersImg from "@/assets/farmers.jpg";
@@ -141,7 +143,7 @@ const Index = () => {
         />
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { step: "01", title: "Nourish Naturally", desc: "Start with our expertly crafted herbal lactation products, designed to support your body's natural milk production.", img: productImg },
+            { step: "01", title: "Nourish Naturally", desc: "Start with our expertly crafted herbal lactation teas — four flavours including fenugreek and fenugreek-free options.", img: productHero },
             { step: "02", title: "Get Expert Guidance", desc: "Access trusted advice from lactation specialists and maternal health professionals through our digital platform.", img: ingredientsImg },
             { step: "03", title: "Join Your Community", desc: "Connect with other mothers, share experiences, and find the peer support that makes all the difference.", img: communityImg },
           ].map((item) => (
@@ -167,13 +169,14 @@ const Index = () => {
           />
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Lactation Tea Blend", desc: "Our flagship herbal blend with fenugreek, fennel, and blessed thistle to naturally support milk production.", price: "ETB 450" },
-              { name: "Herbal Support Capsules", desc: "Concentrated herbal support in convenient capsule form, perfect for busy mothers on the go.", price: "ETB 580" },
-              { name: "Nursing Comfort Kit", desc: "A curated wellness kit with tea, soothing balm, and a guided journal for your breastfeeding journey.", price: "ETB 1,200" },
+              { name: "Mint Lactation Tea", desc: "Refreshing mint blend with fenugreek to naturally support healthy milk production.", price: "ETB 450", img: productMint, tag: "With Fenugreek" },
+              { name: "Fennel Blend Tea", desc: "Our signature fennel and fenugreek blend — trusted by Ethiopian mothers for generations.", price: "ETB 450", img: productFennel, tag: "Bestseller" },
+              { name: "Lemon Tea (Fenugreek-Free)", desc: "A bright, citrus-forward lactation tea for mothers who prefer a fenugreek-free option.", price: "ETB 450", img: productMint, tag: "Fenugreek-Free" },
             ].map((product) => (
-              <div key={product.name} className="bg-background rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow">
-                <div className="p-6 flex justify-center">
-                  <img src={productImg} alt={product.name} loading="lazy" width={800} height={1000} className="h-56 w-auto object-contain" />
+              <div key={product.name} className="bg-background rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow group">
+                <div className="p-6 flex justify-center relative">
+                  <img src={product.img} alt={product.name} loading="lazy" width={800} height={1000} className="h-56 w-auto object-contain group-hover:scale-105 transition-transform duration-700" />
+                  <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-semibold px-2.5 py-0.5 rounded-full">{product.tag}</span>
                 </div>
                 <div className="p-6 pt-0">
                   <h3 className="font-serif text-xl font-semibold mb-2">{product.name}</h3>
