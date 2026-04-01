@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -24,7 +24,7 @@
     --muted: 36 18% 92%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 16 40% 62%;
+    --accent: 40 88% 42%;
     --accent-foreground: 36 33% 97%;
 
     --destructive: 0 84.2% 60.2%;
@@ -71,7 +71,7 @@
     --secondary-foreground: 36 33% 97%;
     --muted: 220 15% 18%;
     --muted-foreground: 36 18% 65%;
-    --accent: 16 40% 55%;
+    --accent: 40 88% 52%;
     --accent-foreground: 36 33% 97%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -98,7 +98,12 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
   }
 }

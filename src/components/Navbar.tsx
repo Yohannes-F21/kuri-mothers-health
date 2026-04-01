@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import kuriLogo from "@/assets/kuri-logo-clean.png";
+import kuriLogo from "@/assets/k-logo1.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -18,12 +18,32 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  const isHeroOverlay = isHomePage && !scrolled;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const updateNavbarState = () => {
+      if (!isHomePage) {
+        setScrolled(true);
+        return;
+      }
+
+      const heroExitThreshold = Math.max(window.innerHeight - 120, 40);
+      setScrolled(window.scrollY >= heroExitThreshold);
+    };
+
+    updateNavbarState();
+    const onScroll = () => updateNavbarState();
+    const onResize = () => updateNavbarState();
+
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [isHomePage]);
 
   useEffect(() => setMobileOpen(false), [location.pathname]);
 
@@ -37,7 +57,11 @@ const Navbar = () => {
     >
       <nav className="section-padding flex items-center justify-between h-16 md:h-20 max-w-[1440px] mx-auto">
         <Link to="/" className="flex items-center">
-          <img src={kuriLogo} alt="Kuri — Mother's Health Solution" className="h-10 md:h-12 w-auto" />
+          <img
+            src={kuriLogo}
+            alt="Kuri — Mother's Health Solution"
+            className="h-12 md:h-20 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -46,10 +70,14 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-sans font-medium transition-colors duration-200 hover:text-primary ${
+              className={`text-sm font-sans font-medium transition-colors duration-200 ${
                 location.pathname === link.path
-                  ? "text-primary"
-                  : "text-muted-foreground"
+                  ? isHeroOverlay
+                    ? "text-primary-foreground underline underline-offset-8 decoration-2"
+                    : "text-primary underline underline-offset-8 decoration-2"
+                  : isHeroOverlay
+                    ? "text-secondary hover:text-primary-foreground"
+                    : "text-primary hover:text-primary/80"
               }`}
             >
               {link.label}
@@ -58,7 +86,12 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
-          <Button variant="hero-outline" size="default" asChild>
+          <Button
+            variant="accent-outline"
+            size="default"
+            asChild
+            // className="text-[#faaf18]"
+          >
             <Link to="/partners">Become a Partner</Link>
           </Button>
           <Button variant="hero" size="default" asChild>
@@ -94,7 +127,7 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
-              <Button variant="hero-outline" asChild>
+              <Button variant="accent-outline" asChild>
                 <Link to="/partners">Become a Partner</Link>
               </Button>
               <Button variant="hero" asChild>

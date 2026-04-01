@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import kuriLogo from "@/assets/kuri-logo-clean.png";
+import { Facebook, Instagram, Linkedin, Send } from "lucide-react";
+import kuriLogo from "@/assets/k-logo1.png";
 
 const Footer = () => {
   return (
@@ -8,13 +9,21 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img src={kuriLogo} alt="Kuri — Mother's Health Solution" className="h-12 w-auto mb-4 brightness-0 invert" />
+            <img
+              src={kuriLogo}
+              alt="Kuri — Mother's Health Solution"
+              className="h-16 w-auto mb-4"
+            />
             <p className="text-sm leading-relaxed opacity-70 max-w-xs">
-              Ethiopia's first trusted lactation support platform. Natural products, expert guidance, and a caring community — all for the breastfeeding mother.
+              Ethiopia's first trusted lactation support platform. Natural
+              products, expert guidance, and a caring community — all for the
+              breastfeeding mother.
             </p>
             {/* Newsletter */}
             <div className="mt-8">
-              <p className="text-xs font-semibold tracking-wider uppercase mb-3 opacity-60">Stay Connected</p>
+              <p className="text-xs font-semibold tracking-wider uppercase mb-3 opacity-60">
+                Stay Connected
+              </p>
               <div className="flex">
                 <input
                   type="email"
@@ -30,18 +39,23 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <p className="text-xs font-semibold tracking-wider uppercase mb-6 opacity-60">Explore</p>
+            <p className="text-xs font-semibold tracking-wider uppercase mb-6 opacity-60">
+              Explore
+            </p>
             <ul className="space-y-3">
               {[
                 { label: "About Kuri", path: "/about" },
                 { label: "Our Products", path: "/products" },
-                { label: "Support Platform", path: "/services" },
+                { label: "Our Services", path: "/services" },
                 { label: "Partner With Us", path: "/partners" },
                 { label: "FAQ", path: "/faq" },
                 { label: "Contact", path: "/contact" },
               ].map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+                  <Link
+                    to={link.path}
+                    className="text-sm opacity-70 hover:opacity-100 transition-opacity"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -49,15 +63,44 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Products */}
+          {/* Follow Us */}
           <div>
-            <p className="text-xs font-semibold tracking-wider uppercase mb-6 opacity-60">Products</p>
+            <p className="text-xs font-semibold tracking-wider uppercase mb-6 opacity-60">
+              Follow Us
+            </p>
             <ul className="space-y-3">
-              {["Lactation Tea Blend", "Herbal Support Capsules", "Nursing Comfort Kit", "Gift Sets"].map((item) => (
-                <li key={item}>
-                  <Link to="/products" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
-                    {item}
-                  </Link>
+              {[
+                {
+                  label: "Telegram",
+                  href: "https://t.me/kurimother",
+                  icon: Send,
+                },
+                {
+                  label: "Facebook",
+                  href: "https://www.facebook.com/share/1AmEY4HXwZ/?mibextid=wwXIfr",
+                  icon: Facebook,
+                },
+                {
+                  label: "Instagram",
+                  href: "https://www.instagram.com/kuri_mothers?igsh=MThzdzYzYTk3ZGJlbg%3D%3D&utm_source=qr",
+                  icon: Instagram,
+                },
+                {
+                  label: "LinkedIn",
+                  href: "https://www.linkedin.com/company/kuri-mothers-health-solution/",
+                  icon: Linkedin,
+                },
+              ].map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm opacity-70 hover:opacity-100 hover:text-accent transition-colors inline-flex items-center gap-2"
+                  >
+                    <social.icon className="h-4 w-4" />
+                    <span>{social.label}</span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -65,27 +108,34 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <p className="text-xs font-semibold tracking-wider uppercase mb-6 opacity-60">Contact</p>
+            <p className="text-xs font-semibold tracking-wider uppercase mb-6 opacity-60">
+              Contact
+            </p>
             <ul className="space-y-3 text-sm opacity-70">
               <li>Addis Ababa, Ethiopia</li>
-              <li>hello@kurimothers.com</li>
-              <li>+251 91 234 5678</li>
+              <li>info.kurimothers@gmail.com</li>
+              <li>+251933935593</li>
             </ul>
-            <div className="flex gap-4 mt-6">
-              {["Instagram", "Facebook", "Telegram"].map((social) => (
-                <a key={social} href="#" className="text-xs opacity-50 hover:opacity-100 transition-opacity uppercase tracking-wider">
-                  {social}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs opacity-40">© 2025 Kuri Mothers Health Solution. All rights reserved.</p>
+          <p className="text-xs opacity-40">
+            © 2025 Kuri Mothers Health Solution. All rights reserved.
+          </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs opacity-40 hover:opacity-70 transition-opacity">Privacy Policy</a>
-            <a href="#" className="text-xs opacity-40 hover:opacity-70 transition-opacity">Terms of Service</a>
+            <a
+              href="#"
+              className="text-xs opacity-40 hover:opacity-70 transition-opacity"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="text-xs opacity-40 hover:opacity-70 transition-opacity"
+            >
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>
