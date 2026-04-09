@@ -138,21 +138,30 @@ const About = () => {
             <div className="order-1 lg:order-2">
               <p className="label-sm mb-4 text-accent">Our Story</p>
               <h2 className="heading-lg mb-6">
-                From a personal struggle to a national mission.
+                From a deeply observed problem to a mission to support mothers.
               </h2>
               <p className="body-md mb-4">
-                Kuri began when our founder experienced firsthand the gaps in
-                breastfeeding support available to Ethiopian mothers. Navigating
-                conflicting advice, limited access to quality products, and the
-                isolating reality of early motherhood, she realized the system
-                needed to change.
+                Kuri was founded by women who witnessed closely how difficult
+                the breastfeeding journey can be for many mothers in Ethiopia.
+                For one of our founders, the inspiration came from seeing a
+                close family member struggle with breastfeeding and the lack of
+                reliable, accessible support around her. For our co-founder, a
+                medical doctor who worked closely with mothers in the obstetric
+                ward, the challenge was something she saw repeatedly in
+                practice, with many mothers facing limited guidance,
+                inconsistent advice, and very few safe, locally relevant
+                solutions. Bringing together these personal and professional
+                experiences, Kuri was created to build a trusted maternal
+                wellness brand that supports mothers with natural products,
+                expert guidance, and a stronger support system throughout
+                motherhood.
               </p>
-              <p className="body-md mb-4">
+              {/* <p className="body-md mb-4">
                 What started as a search for natural lactation solutions evolved
                 into something much bigger: a vision for a comprehensive support
                 ecosystem that combines the best of traditional herbal wisdom
                 with modern technology and expert guidance.
-              </p>
+              </p> */}
               <p className="body-md">
                 Today, Kuri serves thousands of mothers across Ethiopia, and
                 we're just getting started. Our ambition is to become Africa's
