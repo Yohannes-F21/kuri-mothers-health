@@ -8,12 +8,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/hero-mother.jpg";
-import productMint from "@/assets/product-mint.jpg";
-import productFennel from "@/assets/product-fennel.jpg";
 import productHero from "@/assets/product-fennel-hero.jpg";
-import communityImg from "@/assets/community.jpg";
-import ingredientsImg from "@/assets/ingredients.jpg";
-import farmersImg from "@/assets/farmers.jpg";
+import communityImg from "@/assets/join-your-community.png";
+import realityImg from "@/assets/the-reality.png";
+import ingredientsImg from "@/assets/get-expert-guaidance.png";
+import farmersImg from "@/assets/supply-chain.png";
+import { featuredProducts } from "@/data/featured-products";
 import {
   Heart,
   Leaf,
@@ -36,7 +36,7 @@ const pillars = [
   {
     icon: Heart,
     title: "Expert Guidance",
-    desc: "Trusted advice from lactation specialists and maternal health professionals.",
+    desc: "Trusted advice from lactation consultants and maternal health professionals.",
   },
   {
     icon: Users,
@@ -51,11 +51,11 @@ const pillars = [
 ];
 
 const problems = [
-  "Limited access to lactation specialists in many regions",
-  "Inconsistent guidance from well-meaning but untrained sources",
-  "Isolation during the breastfeeding journey without peer support",
-  "Lack of natural, safe, and accessible lactation products",
-  "Overwhelming information with no clear, trusted pathway",
+  "Limited access to reliable lactation support and maternal care guidance",
+  "Conflicting advice from informal or untrained sources",
+  "Isolation during the breastfeeding journey without peer support ",
+  "Lack of safe, natural, and locally accessible lactation products",
+  "A lack of clear, trusted pathways that combine education, practical support, and community",
 ];
 
 const trustReasons = [
@@ -176,7 +176,7 @@ const Index = () => {
                 className="bg-primary-foreground/15 text-primary-foreground border border-primary-foreground/30 hover:bg-primary-foreground/25 backdrop-blur-sm"
                 asChild
               >
-                <Link to="/services">Join the Community</Link>
+                <Link to="/services">Join Our Community</Link>
               </Button>
             </div>
             {/* Trust cues */}
@@ -237,7 +237,7 @@ const Index = () => {
               <p className="body-lg mb-8">
                 Millions of mothers navigate the breastfeeding journey without
                 adequate support, reliable guidance, or access to safe, natural
-                products. The challenges are real — and they deserve real
+                products. The challenges are real, and they deserve real
                 solutions.
               </p>
               <ul className="space-y-4">
@@ -251,7 +251,7 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src={communityImg}
+                src={realityImg}
                 alt="Mothers supporting each other"
                 loading="lazy"
                 width={1200}
@@ -274,18 +274,18 @@ const Index = () => {
             {
               step: "01",
               title: "Nourish Naturally",
-              desc: "Start with our expertly crafted herbal lactation teas — four flavours including fenugreek and fenugreek-free options.",
+              desc: "Start with our expertly crafted herbal lactation teas, four flavours, including fenugreek and fenugreek-free options.",
               img: productHero,
             },
             {
               step: "02",
               title: "Get Expert Guidance",
-              desc: "Access trusted advice from lactation specialists and maternal health professionals through our digital platform.",
+              desc: "Access trusted advice from lactation consultants and maternal health professionals through our digital platform.",
               img: ingredientsImg,
             },
             {
               step: "03",
-              title: "Join Your Community",
+              title: "Join Our Community",
               desc: "Connect with other mothers, share experiences, and find the peer support that makes all the difference.",
               img: communityImg,
             },
@@ -318,31 +318,9 @@ const Index = () => {
             description="Each Kuri product is thoughtfully formulated with natural ingredients, rooted in traditional wisdom, and designed for the modern mother."
           />
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Mint Lactation Tea",
-                desc: "Refreshing mint blend with fenugreek to naturally support healthy milk production.",
-                price: "ETB 450",
-                img: productMint,
-                tag: "With Fenugreek",
-              },
-              {
-                name: "Fennel Blend Tea",
-                desc: "Our signature fennel and fenugreek blend — trusted by Ethiopian mothers for generations.",
-                price: "ETB 450",
-                img: productFennel,
-                tag: "Bestseller",
-              },
-              {
-                name: "Lemon Tea (Fenugreek-Free)",
-                desc: "A bright, citrus-forward lactation tea for mothers who prefer a fenugreek-free option.",
-                price: "ETB 450",
-                img: productMint,
-                tag: "Fenugreek-Free",
-              },
-            ].map((product) => (
+            {featuredProducts.map((product) => (
               <div
-                key={product.name}
+                key={product.slug}
                 className="bg-background rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow group h-full flex flex-col"
               >
                 <div className="relative w-full overflow-hidden">
@@ -362,13 +340,12 @@ const Index = () => {
                   <h3 className="font-serif text-xl font-semibold mb-2">
                     {product.name}
                   </h3>
-                  <p className="body-md text-sm mb-6">{product.desc}</p>
-                  <div className="flex items-center justify-between mt-auto">
-                    <span className="font-serif text-lg font-semibold text-primary">
-                      {product.price}
-                    </span>
-                    <Button variant="hero" size="sm">
-                      <Link to="/products"> Learn More</Link>
+                  <p className="body-md text-sm mb-6">
+                    {product.shortDescription}
+                  </p>
+                  <div className="mt-auto">
+                    <Button variant="hero" size="sm" asChild>
+                      <Link to={`/products/${product.slug}`}>Learn More</Link>
                     </Button>
                   </div>
                 </div>
@@ -395,15 +372,14 @@ const Index = () => {
             </h2>
             <p className="body-lg mb-8">
               Our support platform brings together everything a breastfeeding
-              mother needs — expert guidance, community connection, educational
-              resources, and personalized support — right at your fingertips.
+              mother needs expert guidance, community connection, educational
+              resources, and personalized support right at your fingertips.
             </p>
             <div className="space-y-5">
               {[
-                "Free one-on-one lactation consultations",
+                "one-on-one lactation consultations",
                 "Peer support groups and forums",
                 "Breastfeeding Basics & Pumping guides",
-                "Progress tracking and personalized tips",
               ].map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
                   <CheckCircle size={18} className="text-primary shrink-0" />
@@ -425,7 +401,7 @@ const Index = () => {
                 {
                   icon: "💬",
                   label: "Expert Chat",
-                  desc: "Connect with lactation specialists",
+                  desc: "Connect with lactation consultants anytime",
                 },
                 {
                   icon: "👥",
@@ -437,11 +413,11 @@ const Index = () => {
                   label: "Resources",
                   desc: "Evidence-based guides and tips",
                 },
-                {
-                  icon: "📊",
-                  label: "Your Journey",
-                  desc: "Track progress and milestones",
-                },
+                // {
+                //   icon: "📊",
+                //   label: "Your Journey",
+                //   desc: "Track progress and milestones",
+                // },
               ].map((feature) => (
                 <div
                   key={feature.label}
@@ -534,9 +510,9 @@ const Index = () => {
             </h2>
             <p className="body-lg mb-6">
               Every Kuri product begins in Ethiopia's highlands, where we work
-              directly with smallholder farmers to source fenugreek, fennel,
-              moringa, and other galactagogue herbs. Our supply chain is built
-              on fair partnerships, traceability, and respect for the land.
+              directly with smallholder farmers to source fenugreek, fennel, and
+              other galactagogue herbs. Our supply chain is built on fair
+              partnerships, traceability, and respect for the land.
             </p>
             <div className="space-y-4 mb-8">
               {[
@@ -579,8 +555,8 @@ const Index = () => {
             Our Mission
           </p>
           <h2 className="heading-lg text-primary-foreground mb-6 max-w-3xl mx-auto">
-            Empowering every mother in Ethiopia — and across Africa — to
-            breastfeed with confidence.
+            Empowering every mother in Ethiopia and across Africa to breastfeed
+            with confidence.
           </h2>
           <p className="body-lg !text-primary-foreground/80 max-w-2xl mx-auto mb-10">
             We envision a world where no mother walks the breastfeeding journey
@@ -591,7 +567,7 @@ const Index = () => {
             {[
               { metric: "5,000+", label: "Mothers Supported" },
               { metric: "200+", label: "Partner Farmers" },
-              { metric: "12+", label: "Cities Reached" },
+              { metric: "20+", label: "Resell Partners" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground">

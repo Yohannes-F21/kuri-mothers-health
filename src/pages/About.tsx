@@ -1,24 +1,71 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
-import communityImg from "@/assets/community.jpg";
-import ingredientsImg from "@/assets/ingredients.jpg";
-import farmersImg from "@/assets/farmers.jpg";
-import { Heart, Leaf, Users, Globe, Target, Eye, ArrowRight, Sprout, MapPin, Handshake } from "lucide-react";
+import communityImg from "@/assets/join-your-community.png";
+import ingredientsImg from "@/assets/why-it-matters.png";
+import farmersImg from "@/assets/supply-chain-2.png";
+import {
+  Heart,
+  Leaf,
+  Users,
+  Globe,
+  Target,
+  Eye,
+  ArrowRight,
+  Sprout,
+  MapPin,
+  Handshake,
+} from "lucide-react";
 
 const values = [
-  { icon: Heart, title: "Mother-Centered", desc: "Everything we do starts with a mother's real needs and experiences." },
-  { icon: Leaf, title: "Natural & Safe", desc: "We believe in the power of nature, guided by science and tradition." },
-  { icon: Users, title: "Community-First", desc: "No mother should walk this journey alone. Support is at the core." },
-  { icon: Globe, title: "African Ambition", desc: "Rooted in Ethiopia, with a vision to serve mothers across the continent." },
-  { icon: Target, title: "Evidence-Informed", desc: "Our products and guidance are shaped by research and real-world feedback." },
-  { icon: Eye, title: "Holistic Care", desc: "Beyond products — we build systems of support for lasting impact." },
+  {
+    icon: Heart,
+    title: "Mother-Centered",
+    desc: "Everything we do starts with a mother's real needs and experiences.",
+  },
+  {
+    icon: Leaf,
+    title: "Natural & Safe",
+    desc: "We believe in the power of nature, guided by science and tradition.",
+  },
+  {
+    icon: Users,
+    title: "Community-First",
+    desc: "No mother should walk this journey alone. Support is at the core.",
+  },
+  {
+    icon: Globe,
+    title: "African Ambition",
+    desc: "Rooted in Ethiopia, with a vision to serve mothers across the continent.",
+  },
+  {
+    icon: Target,
+    title: "Evidence-Informed",
+    desc: "Our products and guidance are shaped by research and real-world feedback.",
+  },
+  {
+    icon: Eye,
+    title: "Holistic Care",
+    desc: "Beyond products — we build systems of support for lasting impact.",
+  },
 ];
 
 const supplyChainPoints = [
-  { icon: Sprout, title: "Sourced from Ethiopian Farmers", desc: "We partner directly with smallholder farmers across Ethiopia's most fertile regions — from Oromia to Amhara to SNNPR — to source the finest fenugreek, fennel, moringa, and other galactagogue herbs." },
-  { icon: MapPin, title: "Traceability & Quality", desc: "Every ingredient is traceable to its origin. We work closely with farming communities to ensure sustainable harvesting practices, fair pricing, and consistent quality from field to finished product." },
-  { icon: Handshake, title: "Empowering Rural Communities", desc: "By building direct relationships with farmers — many of them women — Kuri creates economic opportunity in rural Ethiopia while securing a reliable supply of the highest-quality natural ingredients." },
+  {
+    icon: Sprout,
+    title: "Sourced from Ethiopian Farmers",
+    desc: "We partner directly with smallholder farmers across Ethiopia's most fertile regions — from Oromia to Amhara to SNNPR — to source the finest fenugreek, fennel, moringa, and other galactagogue herbs.",
+  },
+  {
+    icon: MapPin,
+    title: "Traceability & Quality",
+    desc: "Every ingredient is traceable to its origin. We work closely with farming communities to ensure sustainable harvesting practices, fair pricing, and consistent quality from field to finished product.",
+  },
+  {
+    icon: Handshake,
+    title: "Empowering Rural Communities",
+    desc: "By building direct relationships with farmers — many of them women — Kuri creates economic opportunity in rural Ethiopia while securing a reliable supply of the highest-quality natural ingredients.",
+  },
 ];
 
 const About = () => {
@@ -31,7 +78,10 @@ const About = () => {
             <p className="label-sm mb-4 text-accent">About Kuri</p>
             <h1 className="heading-xl mb-6">A mother's strength, supported.</h1>
             <p className="body-lg max-w-2xl">
-              Kuri was born from a profound understanding: breastfeeding is one of the most natural acts in the world, yet millions of mothers face it without the support they deserve. We exist to change that — starting in Ethiopia.
+              Kuri was born from a profound understanding: breastfeeding is one
+              of the most natural acts in the world, yet millions of mothers
+              face it without the support they deserve. We exist to change that
+              — starting in Ethiopia.
             </p>
           </div>
         </div>
@@ -39,21 +89,35 @@ const About = () => {
 
       {/* Mission & Vision */}
       <section className="section-padding section-y max-w-[1440px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
+          <article className="relative overflow-hidden rounded-2xl border border-border bg-card/80 p-8 md:p-10 shadow-sm">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/50 via-accent/80 to-primary/20" />
             <p className="label-sm mb-4 text-accent">Our Mission</p>
-            <h2 className="heading-lg mb-6">To empower every breastfeeding mother with the products, knowledge, and community she needs to thrive.</h2>
-            <p className="body-lg">
-              We combine time-honoured herbal traditions with modern maternal health science to create an integrated support system. Kuri is not just a brand — it's a movement toward better maternal care in Africa.
+            <h2 className="heading-md mb-5">
+              To empower every breastfeeding mother with the products,
+              knowledge, and community she needs to thrive.
+            </h2>
+            <p className="body-lg text-base md:text-lg">
+              We combine time-honoured herbal traditions with modern maternal
+              health science to create an integrated support system. Kuri is not
+              just a brand — it's a movement toward better maternal care in
+              Africa.
             </p>
-          </div>
-          <div>
+          </article>
+
+          <article className="relative overflow-hidden rounded-2xl border border-border bg-card/80 p-8 md:p-10 shadow-sm">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent/80 via-primary/50 to-accent/30" />
             <p className="label-sm mb-4 text-accent">Our Vision</p>
-            <h2 className="heading-lg mb-6">A world where no mother breastfeeds alone.</h2>
-            <p className="body-lg">
-              We see a future where every mother in Ethiopia and across Africa has access to safe, natural lactation products and a network of support that uplifts, educates, and nurtures her through the entire breastfeeding journey.
+            <h2 className="heading-md mb-5">
+              A world where no mother breastfeeds alone.
+            </h2>
+            <p className="body-lg text-base md:text-lg">
+              We see a future where every mother in Ethiopia and across Africa
+              has access to safe, natural lactation products and a network of
+              support that uplifts, educates, and nurtures her through the
+              entire breastfeeding journey.
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
@@ -62,19 +126,38 @@ const About = () => {
         <div className="section-padding section-y max-w-[1440px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <img src={communityImg} alt="Kuri community of mothers" loading="lazy" width={1200} height={800} className="rounded-2xl w-full object-cover aspect-[4/3]" />
+              <img
+                src={communityImg}
+                alt="Kuri community of mothers"
+                loading="lazy"
+                width={1200}
+                height={800}
+                className="rounded-2xl w-full object-cover aspect-[4/3]"
+              />
             </div>
             <div className="order-1 lg:order-2">
               <p className="label-sm mb-4 text-accent">Our Story</p>
-              <h2 className="heading-lg mb-6">From a personal struggle to a national mission.</h2>
+              <h2 className="heading-lg mb-6">
+                From a personal struggle to a national mission.
+              </h2>
               <p className="body-md mb-4">
-                Kuri began when our founder experienced firsthand the gaps in breastfeeding support available to Ethiopian mothers. Navigating conflicting advice, limited access to quality products, and the isolating reality of early motherhood, she realized the system needed to change.
+                Kuri began when our founder experienced firsthand the gaps in
+                breastfeeding support available to Ethiopian mothers. Navigating
+                conflicting advice, limited access to quality products, and the
+                isolating reality of early motherhood, she realized the system
+                needed to change.
               </p>
               <p className="body-md mb-4">
-                What started as a search for natural lactation solutions evolved into something much bigger: a vision for a comprehensive support ecosystem that combines the best of traditional herbal wisdom with modern technology and expert guidance.
+                What started as a search for natural lactation solutions evolved
+                into something much bigger: a vision for a comprehensive support
+                ecosystem that combines the best of traditional herbal wisdom
+                with modern technology and expert guidance.
               </p>
               <p className="body-md">
-                Today, Kuri serves thousands of mothers across Ethiopia, and we're just getting started. Our ambition is to become Africa's most trusted maternal wellness brand — one mother, one community, one city at a time.
+                Today, Kuri serves thousands of mothers across Ethiopia, and
+                we're just getting started. Our ambition is to become Africa's
+                most trusted maternal wellness brand — one mother, one
+                community, one city at a time.
               </p>
             </div>
           </div>
@@ -86,9 +169,14 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="label-sm mb-4 text-accent">Our Supply Chain</p>
-            <h2 className="heading-lg mb-6">From Ethiopian farms to every mother's hands.</h2>
+            <h2 className="heading-lg mb-6">
+              From Ethiopian farms to every mother's hands.
+            </h2>
             <p className="body-lg mb-8">
-              Kuri doesn't just sell products — we build supply chains that uplift communities. We work directly with farmers across Ethiopia to source the natural herbs and botanicals that power our lactation support products.
+              Kuri doesn't just sell products — we build supply chains that
+              uplift communities. We work directly with farmers across Ethiopia
+              to source the natural herbs and botanicals that power our
+              lactation support products.
             </p>
             <div className="space-y-8">
               {supplyChainPoints.map((point) => (
@@ -97,7 +185,9 @@ const About = () => {
                     <point.icon size={22} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-lg font-semibold mb-1">{point.title}</h3>
+                    <h3 className="font-serif text-lg font-semibold mb-1">
+                      {point.title}
+                    </h3>
                     <p className="body-md text-sm">{point.desc}</p>
                   </div>
                 </div>
@@ -105,8 +195,18 @@ const About = () => {
             </div>
           </div>
           <div>
-            <img src={farmersImg} alt="Ethiopian farmers harvesting herbs for Kuri products" loading="lazy" width={1200} height={800} className="rounded-2xl w-full object-cover aspect-[4/3]" />
-            <p className="text-xs text-muted-foreground mt-3 text-center">Herb farmers in the Ethiopian highlands — the origin of every Kuri product.</p>
+            <img
+              src={farmersImg}
+              alt="Ethiopian farmers harvesting herbs for Kuri products"
+              loading="lazy"
+              width={1200}
+              height={800}
+              className="rounded-2xl w-full object-cover aspect-[4/3]"
+            />
+            <p className="text-xs text-muted-foreground mt-3 text-center">
+              Herb farmers in the Ethiopian highlands — the origin of every Kuri
+              product.
+            </p>
           </div>
         </div>
       </section>
@@ -119,7 +219,14 @@ const About = () => {
             title="Maternal support changes everything."
             description="When a mother is supported, her child thrives. When her community rallies around her, entire generations benefit. The evidence is clear: investing in breastfeeding support is one of the most impactful things we can do."
           />
-          <img src={ingredientsImg} alt="Natural herbal ingredients" loading="lazy" width={1200} height={800} className="rounded-2xl w-full max-w-4xl mx-auto object-cover aspect-[16/9]" />
+          <img
+            src={ingredientsImg}
+            alt="Natural herbal ingredients"
+            loading="lazy"
+            width={1200}
+            height={800}
+            className="rounded-2xl w-full max-w-4xl mx-auto object-cover aspect-[16/9]"
+          />
         </div>
       </section>
 
@@ -128,9 +235,14 @@ const About = () => {
         <SectionHeading label="Our Values" title="What guides us, every day." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {values.map((v) => (
-            <div key={v.title} className="p-8 rounded-xl bg-card border border-border">
+            <div
+              key={v.title}
+              className="p-8 rounded-xl bg-card border border-border"
+            >
               <v.icon size={24} className="text-primary mb-4" />
-              <h3 className="font-serif text-lg font-semibold mb-2">{v.title}</h3>
+              <h3 className="font-serif text-lg font-semibold mb-2">
+                {v.title}
+              </h3>
               <p className="body-md text-sm">{v.desc}</p>
             </div>
           ))}
@@ -140,15 +252,20 @@ const About = () => {
       {/* CTA */}
       <section className="bg-card">
         <div className="section-padding section-y max-w-[1440px] mx-auto text-center">
-          <h2 className="heading-lg mb-6">Ready to experience the Kuri difference?</h2>
+          <h2 className="heading-lg mb-6">
+            Ready to experience the Kuri difference?
+          </h2>
           <p className="body-lg max-w-lg mx-auto mb-10">
-            Explore our products, join our community, or partner with us to make maternal support accessible to every mother.
+            Explore our products, join our community, or partner with us to make
+            maternal support accessible to every mother.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/products">Explore Products <ArrowRight className="ml-1" /></Link>
+              <Link to="/products">
+                Explore Products <ArrowRight className="ml-1" />
+              </Link>
             </Button>
-            <Button variant="hero-outline" size="lg" asChild>
+            <Button variant="accent-outline" size="lg" asChild>
               <Link to="/partners">Partner With Us</Link>
             </Button>
           </div>
