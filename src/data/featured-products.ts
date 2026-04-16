@@ -1,5 +1,6 @@
-import productMint from "@/assets/product-mint.jpg";
-import productFennel from "@/assets/product-fennel.jpg";
+import productMint from "@/assets/mint-tea.png";
+import productLemon from "@/assets/lemmon-tea.png";
+import productFennel from "@/assets/fennel-fenugreek-tea.png";
 
 export type FeaturedProduct = {
   slug: string;
@@ -32,7 +33,7 @@ export const featuredProducts: FeaturedProduct[] = [
   },
   {
     slug: "fennel-blend-tea",
-    name: "Fennel Blend Tea",
+    name: "Fennel Lactation Tea",
     shortDescription:
       "A warm, aromatic blend designed for mothers who want steady daily lactation support with a familiar, comforting taste.",
     longDescription:
@@ -62,6 +63,23 @@ export const featuredProducts: FeaturedProduct[] = [
       "Encourages regular fluid intake",
       "Has a smooth, comforting aroma",
       "Designed for daily comfort and consistency",
+    ],
+    tag: "Fenugreek-Free",
+    img: productLemon,
+  },
+  {
+    slug: "mint-tea-fenugreek-free",
+    name: "Mint Tea (Fenugreek-Free)",
+    shortDescription:
+      "A gentle fenugreek-free mint blend for mothers who want a softer daily lactation tea without sacrificing comfort.",
+    longDescription:
+      "This smooth mint-forward blend is crafted for mothers who prefer to avoid fenugreek while still maintaining a supportive tea routine. With calming botanicals and a clean finish, it fits easily into daily breastfeeding care and hydration habits.",
+    ingredients: ["Spearmint", "Nettle", "Black Tea"],
+    benefits: [
+      "Supports healthy breast milk production with a fenugreek-free formulation",
+      "Offers a cooling and refreshing flavor profile",
+      "Gentle on digestion and easy to enjoy daily",
+      "Helps mothers stay consistent with hydration",
     ],
     tag: "Fenugreek-Free",
     img: productMint,

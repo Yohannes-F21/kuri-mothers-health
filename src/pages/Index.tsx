@@ -8,7 +8,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/hero-mother.jpg";
-import productHero from "@/assets/product-fennel-hero.jpg";
+
+import productHero from "@/assets/kuri-all-teas.png";
 import communityImg from "@/assets/join-your-community.png";
 import realityImg from "@/assets/the-reality.png";
 import ingredientsImg from "@/assets/get-expert-guaidance.png";
@@ -87,7 +88,7 @@ const trustReasons = [
   {
     icon: Star,
     title: "Holistic Approach",
-    desc: "Beyond products — a complete support ecosystem for every mother.",
+    desc: "Beyond products a complete support ecosystem for every mother.",
   },
 ];
 
@@ -123,7 +124,7 @@ const faqs = [
   },
   {
     q: "How does the support platform work?",
-    a: "Our digital platform connects you with lactation experts, peer support groups, educational content, and personalized guidance — all accessible from your phone.",
+    a: "Our digital platform connects you with lactation experts, peer support groups, educational content, and personalized guidance all accessible from your phone.",
   },
   {
     q: "Is Kuri only for first-time mothers?",
@@ -162,7 +163,7 @@ const Index = () => {
             </h1>
             <p className="text-lg md:text-xl leading-relaxed text-primary-foreground/80 max-w-lg mb-10">
               Natural lactation products, trusted expert guidance, and a caring
-              community of mothers — everything you need for a supported
+              community of mothers everything you need for a supported
               breastfeeding journey.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -176,7 +177,9 @@ const Index = () => {
                 className="bg-primary-foreground/15 text-primary-foreground border border-primary-foreground/30 hover:bg-primary-foreground/25 backdrop-blur-sm"
                 asChild
               >
-                <Link to="/services">Join Our Community</Link>
+                <Link to="https://t.me/kurimotherchannel">
+                  Join Our Community
+                </Link>
               </Button>
             </div>
             {/* Trust cues */}
@@ -318,39 +321,41 @@ const Index = () => {
             description="Each Kuri product is thoughtfully formulated with natural ingredients, rooted in traditional wisdom, and designed for the modern mother."
           />
           <div className="grid md:grid-cols-3 gap-8">
-            {featuredProducts.map((product) => (
-              <div
-                key={product.slug}
-                className="bg-background rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow group h-full flex flex-col"
-              >
-                <div className="relative w-full overflow-hidden">
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    loading="lazy"
-                    width={800}
-                    height={1000}
-                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                    {product.tag}
-                  </span>
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-serif text-xl font-semibold mb-2">
-                    {product.name}
-                  </h3>
-                  <p className="body-md text-sm mb-6">
-                    {product.shortDescription}
-                  </p>
-                  <div className="mt-auto">
-                    <Button variant="hero" size="sm" asChild>
-                      <Link to={`/products/${product.slug}`}>Learn More</Link>
-                    </Button>
+            {featuredProducts
+              .filter((product) => product.slug !== "mint-tea-fenugreek-free")
+              .map((product) => (
+                <div
+                  key={product.slug}
+                  className="bg-background rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow group h-full flex flex-col"
+                >
+                  <div className="relative w-full overflow-hidden">
+                    <img
+                      src={product.img}
+                      alt={product.name}
+                      loading="lazy"
+                      width={800}
+                      height={1600}
+                      className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                      {product.tag}
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="font-serif text-xl font-semibold mb-2">
+                      {product.name}
+                    </h3>
+                    <p className="body-md text-sm mb-6">
+                      {product.shortDescription}
+                    </p>
+                    <div className="mt-auto">
+                      <Button variant="hero" size="sm" asChild>
+                        <Link to={`/products/${product.slug}`}>Learn More</Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
           <div className="text-center mt-12">
             <Button variant="hero-outline" size="lg" asChild>
@@ -670,7 +675,7 @@ const Index = () => {
         </h2>
         <p className="body-lg max-w-xl mx-auto mb-10">
           Whether you're a new mother seeking support or a partner looking to
-          make a difference — Kuri is here for you.
+          make a difference Kuri is here for you.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="hero" size="xl" asChild>

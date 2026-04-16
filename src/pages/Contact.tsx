@@ -138,8 +138,8 @@ const Contact = () => {
             <h1 className="heading-xl mb-6">We'd love to hear from you.</h1>
             <p className="body-lg max-w-2xl">
               Whether you're a mother seeking support, a partner exploring
-              collaboration, or simply curious about Kuri — reach out. We're
-              here to help.
+              collaboration, or simply curious about Kuri reach out. We're here
+              to help.
             </p>
           </div>
         </div>
@@ -157,8 +157,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-sans font-semibold text-sm mb-1">Email</p>
-                  <p className="body-md text-sm">hello@kurimothers.com</p>
-                  <p className="body-md text-sm">partners@kurimothers.com</p>
+                  <p className="body-md text-sm">info.kurimothers@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -167,7 +166,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-sans font-semibold text-sm mb-1">Phone</p>
-                  <p className="body-md text-sm">+251 91 234 5678</p>
+                  <p className="body-md text-sm">+251933935593</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -186,13 +185,40 @@ const Contact = () => {
             <div className="mt-12 pt-8 border-t border-border">
               <p className="label-sm mb-4">Follow Us</p>
               <div className="flex gap-4">
-                {["Instagram", "Facebook", "Telegram"].map((social) => (
+                {[
+                  {
+                    label: "Instagram",
+                    href: "https://www.instagram.com/kuri_mothers?igsh=MThzdzYzYTk3ZGJlbg%3D%3D&utm_source=qr",
+                  },
+                  {
+                    label: "Facebook",
+                    href: "https://www.facebook.com/share/1AmEY4HXwZ/?mibextid=wwXIfr",
+                  },
+                  {
+                    label: "Telegram",
+                    href: "https://t.me/kurimotherchannel",
+                  },
+                  {
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/company/kuri-mothers-health-solution/",
+                  },
+                  {
+                    label: "TikTok",
+                    href: "https://www.tiktok.com/@kuri.mothers.health?_r=1&_t=ZS-95YSSRHePkG",
+                  },
+                ].map((social) => (
                   <a
-                    key={social}
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group relative inline-block text-sm text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:text-primary focus-visible:-translate-y-0.5 focus-visible:text-primary"
                   >
-                    {social}
+                    <span>{social.label}</span>
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100 group-focus-visible:scale-x-100"
+                    />
                   </a>
                 ))}
               </div>
@@ -208,7 +234,7 @@ const Contact = () => {
                 partnership form or email us directly.
               </p>
               <Button variant="hero-outline" size="sm" asChild>
-                <a href="mailto:partners@kurimothers.com">
+                <a href="mailto:info.kurimothers@gmail.com?subject=Partnership Inquiry">
                   Email Partners Team
                 </a>
               </Button>

@@ -65,15 +65,15 @@ const whyPartner = [
 
 const partnerLogos = [
   { src: ithielLogo, name: "Ithiel", logoClass: "max-w-[250px] max-h-28" },
-  { src: marhiwotLogo, name: "Marhiwot", logoClass: "max-w-[250px] max-h-28" },
-  { src: mulmulLogo, name: "Mulmul", logoClass: "max-w-[380px] max-h-44" },
+  { src: marhiwotLogo, name: "Marhiwot", logoClass: "max-w-[380px] max-h-44" },
+  { src: mulmulLogo, name: "Mulmul", logoClass: "max-w-[380px] max-h-46" },
   {
     src: michuMultimediaLogo,
     name: "Michu Multimedia",
     logoClass: "max-w-[250px] max-h-28",
   },
   { src: naebLogo, name: "NAEB", logoClass: "max-w-[250px] max-h-28" },
-  { src: whizKidsLogo, name: "Whiz Kids", logoClass: "max-w-[380px] max-h-44" },
+  { src: whizKidsLogo, name: "Whiz Kids", logoClass: "max-w-[380px] max-h-46" },
   {
     src: yeneHealthLogo,
     name: "Yene Health",
@@ -240,7 +240,7 @@ const Partners = () => {
             <p className="body-lg max-w-2xl">
               Join a network of partners committed to improving maternal health
               across Ethiopia and Africa. Whether you're a pharmacy, health
-              center, distributor, or organization — there's a place for you in
+              center, distributor, or organization there's a place for you in
               the Kuri ecosystem.
             </p>
           </div>
@@ -257,8 +257,8 @@ const Partners = () => {
             </h2>
             <p className="body-lg mb-8">
               Kuri is building the leading maternal wellness brand in Africa.
-              Our partners don't just distribute products — they become part of
-              a movement that empowers mothers and strengthens communities.
+              Our partners don't just distribute products they become part of a
+              movement that empowers mothers and strengthens communities.
             </p>
             <ul className="space-y-4">
               {whyPartner.map((item) => (
@@ -443,13 +443,13 @@ const Partners = () => {
             {partnerLogos.map((partner) => (
               <div
                 key={partner.name}
-                className="w-full min-h-[160px] flex items-center justify-center"
+                className="group w-full min-h-[160px] flex items-center justify-center rounded-xl transition-all duration-500 hover:-translate-y-1.5 hover:bg-card/60"
               >
                 <img
                   src={partner.src}
                   alt={`${partner.name} logo`}
                   loading="lazy"
-                  className={`${partner.logoClass} w-full object-contain opacity-95 hover:opacity-100 transition-opacity`}
+                  className={`${partner.logoClass} w-full object-contain opacity-90 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100`}
                 />
               </div>
             ))}

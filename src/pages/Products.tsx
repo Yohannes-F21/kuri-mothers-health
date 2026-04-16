@@ -7,11 +7,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import productMint from "@/assets/product-mint.jpg";
-import productLemon from "@/assets/product-lemon.jpg";
-import productFennel from "@/assets/product-fennel.jpg";
-import productHero from "@/assets/product-fennel-hero.jpg";
-import productLifestyle from "@/assets/product-lifestyle.jpg";
+import { featuredProducts } from "@/data/featured-products";
+import productHero from "@/assets/new-mom-package.png";
+import productLifestyle from "@/assets/working-mom-package.png";
 import ingredientsImg from "@/assets//rooted-in-nature.png";
 import {
   Leaf,
@@ -25,36 +23,11 @@ import {
   Baby,
 } from "lucide-react";
 
-const teas = [
-  {
-    name: "Mint Lactation Tea",
-    desc: "A refreshing mint-infused herbal blend with fenugreek, crafted to naturally support healthy milk production while soothing digestion.",
-    price: "ETB 450",
-    tag: "With Fenugreek",
-    img: productMint,
-  },
-  {
-    name: "Fennel Lactation Tea",
-    desc: "Our signature fennel blend tea with fenugreek — a time-honored galactagogue combination trusted by Ethiopian mothers for generations.",
-    price: "ETB 450",
-    tag: "With Fenugreek",
-    img: productFennel,
-  },
-  {
-    name: "Mint Tea (Fenugreek-Free)",
-    desc: "A gentle, fenugreek-free mint lactation tea for mothers who prefer or need an alternative formulation without compromising on support.",
-    price: "ETB 450",
-    tag: "Fenugreek-Free",
-    img: productMint,
-  },
-  {
-    name: "Lemon Tea (Fenugreek-Free)",
-    desc: "A bright, citrus-forward lactation tea without fenugreek. Perfect for mothers seeking a lighter, refreshing option with natural lactation herbs.",
-    price: "ETB 450",
-    tag: "Fenugreek-Free",
-    img: productLemon,
-  },
-];
+const teas = featuredProducts.map((product) => ({
+  ...product,
+  desc: product.shortDescription,
+}));
+console.log(teas);
 
 const guides = [
   {
@@ -65,7 +38,7 @@ const guides = [
   {
     icon: BookOpen,
     name: "Pumping & Storage Guide",
-    desc: "Designed for working mothers — step-by-step guidance on expressing, storing, and handling breast milk safely while maintaining supply.",
+    desc: "Designed for working mothers step-by-step guidance on expressing, storing, and handling breast milk safely while maintaining supply.",
   },
 ];
 
@@ -121,16 +94,16 @@ const benefits = [
 const productFaqs = [
   {
     q: "What's the difference between fenugreek and fenugreek-free teas?",
-    a: "Our fenugreek blends (Mint and Fennel) use fenugreek as a key galactagogue — it's one of the most traditional and effective herbs for boosting milk supply. Our fenugreek-free options (Mint and Lemon) use alternative lactation-supporting herbs, ideal for mothers who are sensitive to fenugreek or prefer a different taste.",
+    a: "Our fenugreek blends (Mint and Fennel) use fenugreek as a key galactagogue it's one of the most traditional and effective herbs for boosting milk supply. Our fenugreek-free options (Mint and Lemon) use alternative lactation-supporting herbs, ideal for mothers who are sensitive to fenugreek or prefer a different taste.",
   },
   {
     q: "How should I prepare the Lactation Tea?",
-    a: ` - Add 1 teaspoon of Kuri Lactation,
-    - Tea to 1 cup (250 ml) of freshly boiled water,
-    - Cover and steep for 3–5 minutes,
-    - Strain before drinking,
-    - Drink it warm,1 to 3 cups per day, 
-    - preferably 30–60 minutes before breastfeeding or pumping
+    a: ` -> Add 1 teaspoon of Kuri Lactation,
+    -> Tea to 1 cup (250 ml) of freshly boiled water,
+    -> Cover and steep for 3–5 minutes,
+    -> Strain before drinking,
+    -> Drink it warm,1 to 3 cups per day, 
+    -> preferably 30–60 minutes before breastfeeding or pumping
     `,
   },
   {
@@ -143,7 +116,7 @@ const productFaqs = [
   },
   {
     q: "What's included in the Working Mom Package?",
-    a: "The Working Mom Package includes milk collectors for hands-free expressing, selected lactation teas, and both our Breastfeeding Basics and Pumping & Storage guides — everything you need to maintain your supply when returning to work.",
+    a: "The Working Mom Package includes milk collectors for hands-free expressing, selected lactation teas, and both our Breastfeeding Basics and Pumping & Storage guides everything you need to maintain your supply when returning to work.",
   },
   {
     q: "Are your products safe for all breastfeeding mothers?",
@@ -194,7 +167,7 @@ const Products = () => {
                   loading="lazy"
                   width={800}
                   height={1000}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="h-full w-full object-scale-down group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/35 via-transparent to-transparent" />
                 <span className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-primary text-xs font-semibold px-3 py-1 rounded-full border border-border/70">
@@ -208,12 +181,14 @@ const Products = () => {
                 <p className="body-md text-sm md:text-base mb-6">
                   {product.desc}
                 </p>
-                <div className="mt-auto pt-5 border-t border-border/70 flex items-center justify-between">
-                  <span className="font-serif text-xl font-semibold text-primary">
-                    {product.price}
-                  </span>
-                  <Button variant="accent-outline" size="default">
-                    Order Now
+                <div className="">
+                  <Button
+                    variant="hero-outline"
+                    size="default"
+                    asChild
+                    className="w-full sm:w-auto"
+                  >
+                    <Link to={`/products/${product.slug}`}>Learn More</Link>
                   </Button>
                 </div>
               </div>
@@ -254,7 +229,7 @@ const Products = () => {
         <SectionHeading
           label="Curated Packages"
           title="Complete support, beautifully packaged."
-          description="Our thoughtfully curated packages combine teas, guides, and accessories — giving mothers everything they need in one box."
+          description="Our thoughtfully curated packages combine teas, guides, and accessories giving mothers everything they need in one box."
         />
         <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {packages.map((pkg) => (
@@ -386,7 +361,7 @@ const Products = () => {
               size="xl"
               className="bg-accent text-accent-foreground hover:bg-accent/85"
             >
-              Shop Now
+              <Link to="https://t.me/kurimotherchannel">Shop Now</Link>
             </Button>
             <Button
               size="xl"

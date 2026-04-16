@@ -46,7 +46,7 @@ const values = [
   {
     icon: Eye,
     title: "Holistic Care",
-    desc: "Beyond products — we build systems of support for lasting impact.",
+    desc: "Beyond products we build systems of support for lasting impact.",
   },
 ];
 
@@ -54,7 +54,7 @@ const supplyChainPoints = [
   {
     icon: Sprout,
     title: "Sourced from Ethiopian Farmers",
-    desc: "We partner directly with smallholder farmers across Ethiopia's most fertile regions — from Oromia to Amhara to SNNPR — to source the finest fenugreek, fennel, moringa, and other galactagogue herbs.",
+    desc: "We partner directly with smallholder farmers across Ethiopia's most fertile regions from Oromia to Amhara to SNNPR to source the finest fenugreek, fennel, moringa, and other galactagogue herbs.",
   },
   {
     icon: MapPin,
@@ -64,7 +64,7 @@ const supplyChainPoints = [
   {
     icon: Handshake,
     title: "Empowering Rural Communities",
-    desc: "By building direct relationships with farmers — many of them women — Kuri creates economic opportunity in rural Ethiopia while securing a reliable supply of the highest-quality natural ingredients.",
+    desc: "By building direct relationships with farmers many of them women Kuri creates economic opportunity in rural Ethiopia while securing a reliable supply of the highest-quality natural ingredients.",
   },
 ];
 
@@ -81,7 +81,7 @@ const About = () => {
               Kuri was born from a profound understanding: breastfeeding is one
               of the most natural acts in the world, yet millions of mothers
               face it without the support they deserve. We exist to change that
-              — starting in Ethiopia.
+              starting in Ethiopia.
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ const About = () => {
             <p className="body-lg text-base md:text-lg">
               We combine time-honoured herbal traditions with modern maternal
               health science to create an integrated support system. Kuri is not
-              just a brand — it's a movement toward better maternal care in
+              just a brand it's a movement toward better maternal care in
               Africa.
             </p>
           </article>
@@ -165,8 +165,8 @@ const About = () => {
               <p className="body-md">
                 Today, Kuri serves thousands of mothers across Ethiopia, and
                 we're just getting started. Our ambition is to become Africa's
-                most trusted maternal wellness brand — one mother, one
-                community, one city at a time.
+                most trusted maternal wellness brand one mother, one community,
+                one city at a time.
               </p>
             </div>
           </div>
@@ -182,10 +182,10 @@ const About = () => {
               From Ethiopian farms to every mother's hands.
             </h2>
             <p className="body-lg mb-8">
-              Kuri doesn't just sell products — we build supply chains that
-              uplift communities. We work directly with farmers across Ethiopia
-              to source the natural herbs and botanicals that power our
-              lactation support products.
+              Kuri doesn't just sell products we build supply chains that uplift
+              communities. We work directly with farmers across Ethiopia to
+              source the natural herbs and botanicals that power our lactation
+              support products.
             </p>
             <div className="space-y-8">
               {supplyChainPoints.map((point) => (
@@ -213,7 +213,7 @@ const About = () => {
               className="rounded-2xl w-full object-cover aspect-[4/3]"
             />
             <p className="text-xs text-muted-foreground mt-3 text-center">
-              Herb farmers in the Ethiopian highlands — the origin of every Kuri
+              Herb farmers in the Ethiopian highlands the origin of every Kuri
               product.
             </p>
           </div>

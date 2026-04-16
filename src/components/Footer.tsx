@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Send } from "lucide-react";
 import kuriLogo from "@/assets/k-logo1.png";
+import TiktokIcon from "./TiktokIcon";
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
             />
             <p className="text-sm leading-relaxed opacity-70 max-w-xs">
               Ethiopia's first trusted lactation support platform. Natural
-              products, expert guidance, and a caring community — all for the
+              products, expert guidance, and a caring community all for the
               breastfeeding mother.
             </p>
             {/* Newsletter */}
@@ -72,7 +73,7 @@ const Footer = () => {
               {[
                 {
                   label: "Telegram",
-                  href: "https://t.me/kurimother",
+                  href: "https://t.me/kurimotherchannel",
                   icon: Send,
                 },
                 {
@@ -89,6 +90,11 @@ const Footer = () => {
                   label: "LinkedIn",
                   href: "https://www.linkedin.com/company/kuri-mothers-health-solution/",
                   icon: Linkedin,
+                },
+                {
+                  label: "TikTok",
+                  href: "https://www.tiktok.com/@kuri.mothers.health?_r=1&_t=ZS-95YSSRHePkG",
+                  icon: TiktokIcon,
                 },
               ].map((social) => (
                 <li key={social.label}>

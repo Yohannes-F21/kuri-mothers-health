@@ -32,7 +32,7 @@ const features = [
   {
     icon: BookOpen,
     title: "Educational Resources",
-    desc: "Access a growing library of evidence-based articles, videos, and guides — including our Breastfeeding Basics and Pumping & Storage guides.",
+    desc: "Access a growing library of evidence-based articles, videos, and guides including our Breastfeeding Basics and Pumping & Storage guides.",
   },
 
   {
@@ -78,7 +78,7 @@ const Services = () => {
               beyond what is in the package. Mothers often need trusted
               information, everyday guidance, and a sense of support alongside
               the products they use. That is why Kuri is designed as more than a
-              product line — it is a growing support model that combines natural
+              product line it is a growing support model that combines natural
               lactation products with education, guidance, and community to
               better respond to the real needs of breastfeeding mothers.
             </p>
@@ -212,7 +212,7 @@ const Services = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="hero" size="xl">
-            Join the Platform
+            <Link to="https://t.me/kurimotherchannel">Join the Platform</Link>
           </Button>
           <Button variant="accent-outline" size="xl" asChild>
             <Link to="/products">
