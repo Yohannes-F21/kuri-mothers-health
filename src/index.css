@@ -109,6 +109,31 @@
 }
 
 @layer utilities {
+  @keyframes partner-marquee-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  .partner-marquee-track {
+    animation: partner-marquee-right 28s linear infinite;
+    will-change: transform;
+  }
+
+  .partner-marquee:hover .partner-marquee-track,
+  .partner-marquee:focus-within .partner-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partner-marquee-track {
+      animation: none;
+    }
+  }
+
   .section-padding {
     @apply px-6 md:px-12 lg:px-20 xl:px-28;
   }

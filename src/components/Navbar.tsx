@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Services", path: "/services" },
   { label: "Blog", path: "/blog" },
   { label: "News", path: "/news" },
-  { label: "Partners", path: "/partners" },
+  // { label: "Partners", path: "/partners" },
   { label: "FAQ", path: "/faq" },
   { label: "Contact", path: "/contact" },
 ];
@@ -62,7 +62,7 @@ const Navbar = () => {
           <img
             src={kuriLogo}
             alt="Kuri — Mother's Health Solution"
-            className="h-12 md:h-20 w-auto"
+            className="h-12 md:h-28 w-auto mt-2"
           />
         </Link>
 
@@ -88,12 +88,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
-          <Button
-            variant="accent-outline"
-            size="default"
-            asChild
-            // className="text-[#faaf18]"
-          >
+          <Button variant="accent-outline" size="default" asChild>
             <Link to="/partners">Become a Partner</Link>
           </Button>
           <Button variant="hero" size="default" asChild>

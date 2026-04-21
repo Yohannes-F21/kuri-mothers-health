@@ -439,20 +439,36 @@ const Partners = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-10 place-items-center">
-            {partnerLogos.map((partner) => (
-              <div
-                key={partner.name}
-                className="group w-full min-h-[160px] flex items-center justify-center rounded-xl transition-all duration-500 hover:-translate-y-1.5 hover:bg-card/60"
-              >
-                <img
-                  src={partner.src}
-                  alt={`${partner.name} logo`}
-                  loading="lazy"
-                  className={`${partner.logoClass} w-full object-contain opacity-90 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100`}
-                />
-              </div>
-            ))}
+          <div className="partner-marquee group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div className="partner-marquee-track flex w-max items-center gap-6 sm:gap-8 lg:gap-10 py-4">
+              {partnerLogos.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="group/logo shrink-0 w-[220px] sm:w-[250px] min-h-[150px] flex items-center justify-center rounded-xl transition-all duration-500 hover:-translate-y-1 hover:bg-card/60"
+                >
+                  <img
+                    src={partner.src}
+                    alt={`${partner.name} logo`}
+                    loading="lazy"
+                    className={`${partner.logoClass} w-full object-contain opacity-90 transition-all duration-500 group-hover/logo:scale-[1.03] group-hover/logo:opacity-100`}
+                  />
+                </div>
+              ))}
+              {partnerLogos.map((partner) => (
+                <div
+                  key={`${partner.name}-duplicate`}
+                  aria-hidden="true"
+                  className="group/logo shrink-0 w-[220px] sm:w-[250px] min-h-[150px] flex items-center justify-center rounded-xl transition-all duration-500 hover:-translate-y-1 hover:bg-card/60"
+                >
+                  <img
+                    src={partner.src}
+                    alt=""
+                    loading="lazy"
+                    className={`${partner.logoClass} w-full object-contain opacity-90 transition-all duration-500 group-hover/logo:scale-[1.03] group-hover/logo:opacity-100`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
