@@ -43,10 +43,10 @@ const ProductDetails = () => {
               <img
                 src={product.img}
                 alt={product.name}
-                className="w-full aspect-[4/3] object-cover"
+                className="w-full aspect-[14/15]  "
                 loading="lazy"
-                width={1200}
-                height={900}
+                // width={1200}
+                // height={1200}
               />
             </div>
 

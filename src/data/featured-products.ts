@@ -1,6 +1,7 @@
-import productMint from "@/assets/mint-tea.png";
-import productLemon from "@/assets/lemmon-tea.png";
-import productFennel from "@/assets/fennel-fenugreek-tea.png";
+import productMint from "@/assets/product-mint-tea.png";
+import productLemon from "@/assets/product-lemon-tea.png";
+import productFennel from "@/assets/product-fennel-fenugreek-tea.png";
+import productMintFenugreekFree from "@/assets/mint2-tea.png";
 
 export type FeaturedProduct = {
   slug: string;
@@ -82,7 +83,7 @@ export const featuredProducts: FeaturedProduct[] = [
       "Helps mothers stay consistent with hydration",
     ],
     tag: "Fenugreek-Free",
-    img: productMint,
+    img: productMintFenugreekFree,
   },
 ];
 

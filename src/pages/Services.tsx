@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
-import communityImg from "@/assets/community.jpg";
+import communityImg from "@/assets/ethiopian-community.jpeg";
 import {
   MessageCircle,
   Users,

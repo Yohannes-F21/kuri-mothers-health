@@ -7,9 +7,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import heroImg from "@/assets/hero-mother.jpg";
+import heroImg from "@/assets/ethiopian-mother-hero2.jpeg";
 
-import productHero from "@/assets/kuri-all-teas.png";
+import productHero from "@/assets/all-teas.png";
 import communityImg from "@/assets/join-your-community.png";
 import realityImg from "@/assets/the-reality.png";
 import ingredientsImg from "@/assets/get-expert-guaidance.png";
@@ -333,9 +333,7 @@ const Index = () => {
                       src={product.img}
                       alt={product.name}
                       loading="lazy"
-                      width={800}
-                      height={1600}
-                      className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-semibold px-2.5 py-0.5 rounded-full">
                       {product.tag}

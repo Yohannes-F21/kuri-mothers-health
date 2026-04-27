@@ -129,7 +129,7 @@ const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs opacity-40">
-            © 2025 Kuri Mothers Health Solution. All rights reserved.
+            © 2026 Kuri Mothers Health Solution. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a

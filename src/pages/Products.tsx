@@ -10,7 +10,7 @@ import {
 import { featuredProducts } from "@/data/featured-products";
 import productHero from "@/assets/new-mom-package.png";
 import productLifestyle from "@/assets/working-mom-package.png";
-import ingredientsImg from "@/assets//rooted-in-nature.png";
+import ingredientsImg from "@/assets/rooted-in-nature.png";
 import {
   Leaf,
   ShieldCheck,
@@ -19,7 +19,6 @@ import {
   ArrowRight,
   CheckCircle,
   BookOpen,
-  Package,
   Baby,
 } from "lucide-react";
 
@@ -27,7 +26,6 @@ const teas = featuredProducts.map((product) => ({
   ...product,
   desc: product.shortDescription,
 }));
-console.log(teas);
 
 const guides = [
   {
@@ -154,39 +152,39 @@ const Products = () => {
           title="Four flavours. Two formulations. One mission."
           description="Choose from our fenugreek-enriched blends for maximum galactagogue support, or our fenugreek-free options for a gentler alternative."
         />
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid gap-6 sm:gap-7 md:auto-rows-fr md:grid-cols-2 lg:gap-10">
           {teas.map((product) => (
             <article
               key={product.name}
-              className="group relative overflow-hidden rounded-2xl border border-border/80 bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/80 bg-background shadow-[0_14px_40px_-28px_hsl(var(--foreground)/0.75)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_54px_-30px_hsl(var(--foreground)/0.7)]"
             >
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-sage-light/40">
+              <div className="relative flex w-full aspect-[1/1] items-center justify-center overflow-hidden ">
                 <img
                   src={product.img}
                   alt={product.name}
                   loading="lazy"
-                  width={800}
-                  height={1000}
-                  className="h-full w-full object-scale-down group-hover:scale-105 transition-transform duration-700"
+                  // width={1000}
+                  // height={1000}
+                  className="h-full w-full object-cover object-center drop-shadow-[0_18px_26px_hsl(var(--foreground)/0.2)] transition-transform duration-700 group-hover:scale-[1.15]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/35 via-transparent to-transparent" />
-                <span className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-primary text-xs font-semibold px-3 py-1 rounded-full border border-border/70">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-white/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="absolute left-4 top-4 rounded-full border border-border/70 bg-background/90 px-3 py-1 text-xs font-semibold tracking-wide text-primary backdrop-blur-sm">
                   {product.tag}
                 </span>
               </div>
-              <div className="p-7 md:p-8 flex flex-col h-full">
-                <h3 className="font-serif text-2xl font-semibold mb-3 leading-tight">
+              <div className="flex flex-1 flex-col p-5 sm:p-6 md:p-8">
+                <h3 className="mb-3 font-serif text-2xl font-semibold leading-tight tracking-[-0.01em] sm:text-[1.85rem]">
                   {product.name}
                 </h3>
-                <p className="body-md text-sm md:text-base mb-6">
+                <p className="body-md mb-6 text-sm leading-relaxed md:text-base">
                   {product.desc}
                 </p>
-                <div className="">
+                <div className="mt-auto pt-2">
                   <Button
                     variant="hero-outline"
                     size="default"
                     asChild
-                    className="w-full sm:w-auto"
+                    className="w-full"
                   >
                     <Link to={`/products/${product.slug}`}>Learn More</Link>
                   </Button>
@@ -231,32 +229,34 @@ const Products = () => {
           title="Complete support, beautifully packaged."
           description="Our thoughtfully curated packages combine teas, guides, and accessories giving mothers everything they need in one box."
         />
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid gap-6 sm:gap-7 md:auto-rows-fr md:grid-cols-2 lg:gap-10">
           {packages.map((pkg) => (
             <article
               key={pkg.name}
-              className="group relative overflow-hidden rounded-2xl border border-border/80 bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/80 bg-background shadow-[0_14px_40px_-28px_hsl(var(--foreground)/0.75)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_54px_-30px_hsl(var(--foreground)/0.7)]"
             >
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-sage-light/40">
+              <div className="relative flex w-full aspect-[4/3] items-center justify-center overflow-hidden ">
                 <img
                   src={pkg.img}
                   alt={pkg.name}
                   loading="lazy"
-                  width={800}
+                  width={1000}
                   height={800}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="h-full w-full object-cover object-center  transition-transform duration-700 group-hover:scale-[1.035]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/35 via-transparent to-transparent" />
-                <span className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-primary text-xs font-semibold px-3 py-1 rounded-full border border-border/70">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-white/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="absolute left-4 top-4 rounded-full border border-border/70 bg-background/90 px-3 py-1 text-xs font-semibold tracking-wide text-primary backdrop-blur-sm">
                   {pkg.tag}
                 </span>
               </div>
-              <div className="p-7 md:p-8 flex flex-col h-full">
-                <h3 className="font-serif text-2xl font-semibold mb-3 leading-tight">
+              <div className="flex flex-1 flex-col p-5 sm:p-6 md:p-8">
+                <h3 className="mb-3 font-serif text-2xl font-semibold leading-tight tracking-[-0.01em] sm:text-[1.85rem]">
                   {pkg.name}
                 </h3>
-                <p className="body-md text-sm md:text-base mb-5">{pkg.desc}</p>
-                <ul className="space-y-2 mb-6">
+                <p className="body-md mb-5 text-sm leading-relaxed md:text-base">
+                  {pkg.desc}
+                </p>
+                <ul className="mb-6 space-y-2">
                   {pkg.includes.map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <CheckCircle
@@ -267,8 +267,12 @@ const Products = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto pt-5 border-t border-border/70">
-                  <Button variant="accent-outline" size="default">
+                <div className="mt-auto border-t border-border/70 pt-5">
+                  <Button
+                    variant="accent-outline"
+                    size="default"
+                    className="w-full"
+                  >
                     Order Now
                   </Button>
                 </div>
