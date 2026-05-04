@@ -58,11 +58,11 @@ const Navbar = () => {
       }`}
     >
       <nav className="section-padding flex items-center justify-between h-16 md:h-20 max-w-[1440px] mx-auto">
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center shrink-0">
           <img
             src={kuriLogo}
             alt="Kuri — Mother's Health Solution"
-            className="h-12 md:h-28 w-auto mt-2"
+            className="h-10 w-auto object-contain sm:h-11 md:h-14 lg:h-24"
           />
         </Link>
 
